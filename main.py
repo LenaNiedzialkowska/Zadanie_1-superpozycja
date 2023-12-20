@@ -27,25 +27,6 @@ for a in lsample_atoms:
 ref_models = [ref_atoms[0:1461], ref_atoms[0:1464], ref_atoms[0:1461], ref_atoms[0:1461]]
 sample_models = [sample_atoms[3:1464], sample_atoms[1467:2928], sample_atoms[2931:4392], sample_atoms[4395:5856]]
 
-# model1
-# ref_atoms_1 = ref_atoms[0:1461]
-# sample_atoms_1 = sample_atoms[3:1464]
-
-# # model2
-# ref_atoms_2 = ref_atoms[0:1464]
-# sample_atom_2 = sample_atoms[1467:2928]
-#
-# # model3
-# ref_atoms_3 = ref_atoms[0:1461]
-# sample_atoms_3 = sample_atoms[2931:4392]
-#
-# # model4
-# ref_atoms_4 = ref_atoms[0:1461]
-# sample_atoms_4 = sample_atoms[4395:5856]
-
-# print(ref_models[0])
-# print(sample_models[0])
-
 ref_model = ref_structure[0]
 sample_model = sample_structure[0]
 
@@ -68,10 +49,6 @@ while i < 4:
     transformed = sup.get_transformed()
     rmsd = calc_rmsd(transformed, ref_coords)
     print("RMSD dla modelu {0}: ".format(i+1), rmsd)
-
-    io = Bio.PDB.PDBIO()
-    io.set_structure(sample_structure)
-    io.save("aligned.pdb")
 
     i += 1
 
