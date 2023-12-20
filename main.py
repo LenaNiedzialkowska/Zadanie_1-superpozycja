@@ -32,13 +32,6 @@ sample_model = sample_structure[0]
 
 i = 0
 while i < 4:
-    # print(ref_models[i])
-    # print(sample_models[i])
-
-    super_imposer = Bio.PDB.Superimposer()
-    super_imposer.set_atoms(ref_models[i], sample_models[i])
-    super_imposer.apply(sample_model.get_atoms())
-
     aligned_coords_ref = np.array(([atom.get_coord() for atom in ref_models[i]]))
     aligned_coords_sample = np.array(([atom.get_coord() for atom in sample_models[i]]))
 
